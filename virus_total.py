@@ -1,8 +1,11 @@
 import requests
 import csv
 from bs4 import BeautifulSoup
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
-API_KEY = "1fca6cbb30b0f3195699c1a5093e1a85c505d81ea7b6cee4e687af2970b687f8"
+API_KEY = os.getenv("APIKEY")
 
 def scan_ip(ip_address):
     ip_scan_endpoint = "https://www.virustotal.com/vtapi/v2/ip-address/report"
